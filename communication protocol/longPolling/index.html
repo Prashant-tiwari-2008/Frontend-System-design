@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long polling example</title>
+</head>
+<body>
+        <div style="text-align: center;">
+            <h1>Long Polling Example</h1>
+            <p id="dynamicContent">Dynamic content come here</p>
+        </div>
+
+
+    <script>
+
+        
+        const getData = async(lastData) => {
+            try {                
+                let response = await fetch(`/getData?lastData=${lastData}`)
+                let result = await response.json();
+                document.getElementById('dynamicContent').innerHTML = result.data;
+                getData(result.data);
+            } catch (error) {
+                console.log(error)
+
+                // please handle error scenario
+            }
+        }
+        getData();
+    </script>
+</body>
+</html>
