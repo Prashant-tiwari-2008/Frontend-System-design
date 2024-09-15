@@ -1,4 +1,4 @@
-import { Authors } from './../constant/index';
+import { Authors } from '../constant/index';
 import { Books } from "../constant";
 
 export const resolvers = {
