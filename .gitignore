@@ -4,6 +4,7 @@
 Graphql-demo-js/node_modules
 Graphql-demo-ts-need-fixes/node_modules
 graphql-game/node_modules
+node_modules/
 /.pnp
 .pnp.js
 
