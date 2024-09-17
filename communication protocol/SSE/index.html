@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Sent Event Example</title>
+</head>
+<body>
+        <div style="text-align: center;">
+            <h1>Server-Sent Events Example</h1>
+            <ul id="sse-data"></ul>
+        </div>
+
+        <script>
+            const list = document.getElementById('sse-data');
+            const eventSource = new EventSource('/sse');
+            eventSource.onmessage = (e) => {
+                console.log(e.data, "message")
+                const newElement = document.createElement('li');
+                newElement.textContent = `message : ${e.data}`
+                list.appendChild(newElement);
+            }
+        </script>
+</body>
+</html>
