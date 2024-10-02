@@ -18,3 +18,9 @@ const puppeteer = require('puppeteer');
 
     console.log("first selector clicked");
 })()
+
+// todo: as assignment
+
+// HomeWork:
+// Automate whole user journey
+// Run this sript everyday at 08:00 AM - CRON job
